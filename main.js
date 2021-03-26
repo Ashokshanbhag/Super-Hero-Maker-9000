@@ -1,4 +1,4 @@
-var canvas = new fabric.Canvas("myCanvas");
+var canvas = new fabric.Canvas('myCanvas');
 
 player_x = 10;
 player_y = 10;
@@ -120,6 +120,90 @@ function my_keydown(e){
 
         up();
         console.log("up")
+
+    }
+
+    if(keyPressed == '38'){
+
+        up();
+        console.log("up is pressed");
+
+    }
+
+    if(keyPressed == '40'){
+
+        down();
+        console.log("down is pressed");
+
+    }
+
+    if(keyPressed == '37'){
+
+        left();
+        console.log("left is pressed");
+        
+    }
+
+    if(keyPressed == '39'){
+
+        right();
+        console.log("right is pressed");
+        
+    }
+
+}
+
+function up(){
+
+    if(player_y >= 0 ){
+
+        player_y = player_y - block_height;
+        console.log("Block Height ="+ block_height);
+        console.log("when Up arrow Is Pressed, x="+ player_x+" ,y="+ player_y);
+        canvas.remove(player_object);
+        player_update();
+
+    }
+
+}
+
+function down(){
+
+    if(player_y <= 500 ){
+
+        player_y = player_y + block_height;
+        console.log("Block Height ="+ block_height);
+        console.log("when Down Arrow Is Pressed, x="+ player_x+" ,y="+ player_y);
+        canvas.remove(player_object);
+        player_update();
+
+    }
+
+}
+
+function left(){
+
+    if(player_x >= 0 ){
+
+        player_x = player_x - block_width;
+        console.log("Block Width ="+ block_width);
+        console.log("when Left Arrow Is Pressed, x="+ player_x+" ,y="+ player_y);
+        canvas.remove(player_object);
+        player_update();
+
+    }
+
+}
+
+function right(){
+
+    if(player_x <= 850 ){
+
+        player_x = player_x + block_width;
+        console.log("Block Width ="+ block_width);
+        console.log("when Right Arrow Is Pressed, x="+ player_x+" ,y="+ player_y);
+        canvas.remove(player_object);
+        player_update();
 
     }
 
